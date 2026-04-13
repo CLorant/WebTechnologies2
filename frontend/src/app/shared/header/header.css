@@ -1,0 +1,17 @@
+.header {
+  background: #E2E2E2;
+  height: 86px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.menu-button {
+  margin-right: 10px;
+}
+
+.logo {
+  font-size: 1.2rem;
+  font-weight: 500;
+}

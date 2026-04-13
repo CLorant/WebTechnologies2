@@ -1,0 +1,39 @@
+<div class="list-header">
+  <h2>Termékek</h2>
+  <button mat-raised-button color="primary" routerLink="/product/create">Új termék</button>
+</div>
+
+<div class="filters">
+  <mat-form-field appearance="outline">
+    <mat-label>Kategória</mat-label>
+    <mat-select (selectionChange)="onCategoryChange($event.value)">
+      <mat-option value="">Minden kategória</mat-option>
+      <mat-option *ngFor="let cat of categories" [value]="cat._id">{{cat.name}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <app-search-filter (search)="onSearch($event)"></app-search-filter>
+</div>
+
+<div class="product-grid">
+  <mat-card *ngFor="let product of products" class="product-card">
+    <img mat-card-image [src]="product.img" alt="{{product.name}}">
+    <mat-card-header>
+      <mat-card-title>{{product.name}}</mat-card-title>
+      <!--
+      <mat-card-subtitle>{{ product.category?.name || product.category }}</mat-card-subtitle>
+      -->
+      <mat-card-subtitle>{{product.price + ' Ft'}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{product.description}}</p>
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <button mat-icon-button color="primary" [routerLink]="['/product/edit', product._id]">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button color="warn" (click)="deleteProduct(product)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

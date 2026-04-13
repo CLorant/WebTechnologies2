@@ -1,0 +1,32 @@
+.active {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-container {
+    height: 100vh;
+    overflow: hidden;
+    background: #E2E2E2;
+}
+
+.sidebar-header {
+    background: #002f6c;
+}
+
+.sidebar-header img {
+    max-width: 64px;
+    margin: 8px;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-link-label {
+    margin-left: 8px;
+}
+
+.mdc-list {
+    padding-top: 0;
+    padding-bottom: 0;
+}

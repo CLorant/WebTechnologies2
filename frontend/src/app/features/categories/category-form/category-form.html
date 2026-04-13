@@ -1,0 +1,21 @@
+<div class="form-container">
+    <mat-card class="form-card">
+        <mat-card-title>{{ isEditMode ? 'Kategória szerkesztése' : 'Új kategória' }}</mat-card-title>
+        <form [formGroup]="categoryForm" (ngSubmit)="onSubmit()">
+            <app-image-upload [existingImageUrl]="existingIconUrl" (imageSelected)="onIconSelected($event)">
+            </app-image-upload>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Kategória név</mat-label>
+                <input matInput formControlName="name">
+                <mat-error *ngIf="categoryForm.get('name')?.hasError('required')">Név kötelező</mat-error>
+            </mat-form-field>
+
+            <div class="form-actions">
+                <button mat-raised-button color="primary" type="submit"
+                    [disabled]="categoryForm.invalid">Mentés</button>
+                <button mat-button type="button" routerLink="/category-list">Mégse</button>
+            </div>
+        </form>
+    </mat-card>
+</div>

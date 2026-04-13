@@ -1,0 +1,8 @@
+<mat-toolbar color="primary" class="header">
+  <button *ngIf="isLoggedIn" mat-icon-button (click)="toggleSidenav()" class="menu-button">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span class="logo">Western Bite Étterem Admin</span>
+  <span class="spacer"></span>
+  <button *ngIf="isLoggedIn" mat-button (click)="logout()">Kijelentkezés</button>
+</mat-toolbar>

@@ -1,0 +1,134 @@
+{
+    "hamburgers": {
+        "name": "Hamburgerek",
+        "icon": "/assets/icons/hamburger.webp",
+        "items": [
+            {
+                "name": "Classic Cheeseburger",
+                "description": "Marhahús pogácsa, cheddar sajt, paradicsom, uborka, házi szósz, friss buci",
+                "img": "/assets/img/categories/hamburgers/prod-1.webp",
+                "price": 3790
+            },
+            {
+                "name": "BBQ Bacon Burger",
+                "description": "Füstös BBQ szósz, ropogós bacon, hagymakarika, cheddar, házi buci",
+                "img": "/assets/img/categories/hamburgers/prod-2.webp",
+                "price": 4190
+            },
+            {
+                "name": "Tex-Mex Burger",
+                "description": "Chili con carne, jalapeño, cheddar sajt, fűszeres szósz",
+                "img": "/assets/img/categories/hamburgers/prod-3.webp",
+                "price": 4290
+            }
+        ]
+    },
+    "bbq-and-grill": {
+        "name": "BBQ és Grill",
+        "icon": "/assets/icons/bbq-and-grill.webp",
+        "items": [
+            {
+                "name": "BBQ Bordák",
+                "description": "Füstölt sertésoldalas házi BBQ szósszal és coleslaw-val",
+                "img": "/assets/img/categories/bbq-and-grill/prod-1.webp",
+                "price": 5690
+            },
+            {
+                "name": "Steak",
+                "description": "Marha steak hagymakarikákkal és sült burgonyával",
+                "img": "/assets/img/categories/bbq-and-grill/prod-2.webp",
+                "price": 6290
+            },
+            {
+                "name": "Pulled Pork",
+                "description": "Lassan sült tépett sertéshús házi buciban, coleslaw-val",
+                "img": "/assets/img/categories/bbq-and-grill/prod-3.webp",
+                "price": 4690
+            }
+        ]
+    },
+    "salads": {
+        "name": "Saláták",
+        "icon": "/assets/icons/salads.webp",
+        "items": [
+            {
+                "name": "Caesar Saláta",
+                "description": "Friss római saláta, csirkemell, parmezán, krutonnal",
+                "img": "/assets/img/categories/salads/prod-1.webp",
+                "price": 3290
+            },
+            {
+                "name": "Texasi Zöldsaláta",
+                "description": "Grillezett zöldségek, kukorica, avokádó és lime dresszing",
+                "img": "/assets/img/categories/salads/prod-2.webp",
+                "price": 3190
+            }
+        ]
+    },
+    "side-dishes": {
+        "name": "Köretek",
+        "icon": "/assets/icons/side-dishes.webp",
+        "items": [
+            {
+                "name": "Hasábburgonya",
+                "description": "Klasszikus aranysült burgonya",
+                "img": "/assets/img/categories/side-dishes/prod-1.webp",
+                "price": 890
+            },
+            {
+                "name": "Sült hagymakarika",
+                "description": "Ropogós, aranybarna hagymakarika BBQ szósszal",
+                "img": "/assets/img/categories/side-dishes/prod-2.webp",
+                "price": 1190
+            }
+        ]
+    },
+    "desserts": {
+        "name": "Desszertek",
+        "icon": "/assets/icons/desserts.webp",
+        "items": [
+            {
+                "name": "Almás pite",
+                "description": "Meleg pite vaníliafagyival",
+                "img": "/assets/img/categories/desserts/prod-1.webp",
+                "price": 1790
+            },
+            {
+                "name": "Csokis brownie",
+                "description": "Gazdag csokoládés brownie dióval",
+                "img": "/assets/img/categories/desserts/prod-2.webp",
+                "price": 1890
+            },
+            {
+                "name": "Amerikai palacsinta",
+                "description": "Házi palacsinta juharsziruppal és banánnal",
+                "img": "/assets/img/categories/desserts/prod-3.webp",
+                "price": 1690
+            }
+        ]
+    },
+    "drinks": {
+        "name": "Italok",
+        "icon": "/assets/icons/drinks.webp",
+        "items": [
+            {
+                "name": "Házi limonádé",
+                "description": "Citromos, epres vagy bodzás frissítő",
+                "img": "/assets/img/categories/drinks/prod-1.webp",
+                "price": 990
+            },
+            {
+                "name": "Kézműves sör",
+                "description": "Választék hazai és amerikai típusú sörökből",
+                "img": "/assets/img/categories/drinks/prod-2.webp",
+                "price": 1490
+            },
+            {
+                "name": "Kóla / Fanta / Sprite",
+                "description": "0,33l dobozos üdítő",
+                "img": "/assets/img/categories/drinks/prod-3.webp",
+                "price": 790
+            }
+        ]
+    }
+}

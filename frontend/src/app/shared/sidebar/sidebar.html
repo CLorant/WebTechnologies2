@@ -1,0 +1,13 @@
+<mat-nav-list>
+  <div class="sidebar-container">
+    <div class="sidebar-header">
+      <img src="logo.png" alt="Western Bite Logó">
+    </div>
+    <a mat-list-item *ngFor="let item of menuItems" [routerLink]="item.path" routerLinkActive="active">
+      <div class="sidebar-link">
+        <mat-icon mat-list-icon>{{item.icon}}</mat-icon>
+        <span class="sidebar-link-label" mat-line>{{item.label}}</span>
+      </div>
+    </a>
+  </div>
+</mat-nav-list>

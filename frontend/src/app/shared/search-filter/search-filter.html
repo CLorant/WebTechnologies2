@@ -1,0 +1,5 @@
+<mat-form-field appearance="outline" class="full-width">
+  <mat-label>Keresés</mat-label>
+  <input matInput placeholder="Név vagy leírás..." (keyup)="onSearch($event.target.value)">
+  <mat-icon matSuffix>search</mat-icon>
+</mat-form-field>
