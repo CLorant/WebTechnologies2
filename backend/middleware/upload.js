@@ -5,7 +5,9 @@ const sharp = require('sharp');
 const slugify = require('slugify');
 
 const baseUploadDir = 'uploads';
-if (!fs.existsSync(baseUploadDir)) fs.mkdirSync(baseUploadDir, { recursive: true });
+if (!fs.existsSync(baseUploadDir)) {
+  fs.mkdirSync(baseUploadDir, { recursive: true });
+}
 
 const storage = multer.memoryStorage();
 
@@ -19,8 +21,13 @@ const fileFilter = (req, file, cb) => {
 
 const upload = multer({ storage, limits: { fileSize: 5 * 1024 * 1024 }, fileFilter });
 
-const processImage = async (file, entityName, entityId, subfolder = 'products') => {
-  const slug = slugify(entityName, { lower: true, strict: true, locale: 'hu' });
+const processImage = async (file, entityId, entityName, subfolder = 'products') => {
+  const slug = slugify(entityName, { 
+    lower: true, 
+    strict: true,
+    locale: 'en',
+    replacement: '-'
+  });
   const filename = `${slug}-${entityId}.webp`;
   const uploadDir = path.join(baseUploadDir, subfolder);
   if (!fs.existsSync(uploadDir)) fs.mkdirSync(uploadDir, { recursive: true });
@@ -29,4 +36,15 @@ const processImage = async (file, entityName, entityId, subfolder = 'products') 
   return `/uploads/${subfolder}/${filename}`;
 };
 
-module.exports = { upload, processImage };
+const deleteImage = (imagePath) => {
+  if (!imagePath) return;
+  
+  const relativePath = imagePath.startsWith('/') ? imagePath.slice(1) : imagePath;
+  const fullPath = path.join(__dirname, '..', relativePath);
+  if (fs.existsSync(fullPath)) {
+    fs.unlinkSync(fullPath);
+    console.log(`Deleted old image: ${fullPath}`);
+  }
+};
+
+module.exports = { upload, processImage, deleteImage };

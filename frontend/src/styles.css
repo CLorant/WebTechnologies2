@@ -76,3 +76,7 @@
 mat-sidenav {
     border-top-right-radius: 0px!important;
 }
+
+.search-bar {
+  width: 350px;
+}

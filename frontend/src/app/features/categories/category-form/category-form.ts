@@ -81,6 +81,7 @@ export class CategoryForm implements OnInit {
             formData.append('image', this.iconFile);
             formData.append('categoryName', categoryData.name);
             formData.append('categoryId', newCategoryId);
+            formData.append('oldImagePath', this.existingIconUrl || '');
             this.categoryService.uploadIcon(formData).subscribe({
               next: (uploadRes) => {
                 this.categoryService.updateCategory(newCategoryId, { icon: uploadRes.imagePath }).subscribe({

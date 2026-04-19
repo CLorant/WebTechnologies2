@@ -11,7 +11,7 @@
       <mat-option *ngFor="let cat of categories" [value]="cat._id">{{cat.name}}</mat-option>
     </mat-select>
   </mat-form-field>
-  <app-search-filter (search)="onSearch($event)"></app-search-filter>
+  <app-search-filter class="search-bar" (search)="onSearch($event)"></app-search-filter>
 </div>
 
 <div class="product-grid">

@@ -116,6 +116,7 @@ export class ProductForm implements OnInit {
           formData.append('image', this.imageFile);
           formData.append('productName', productData.name);
           formData.append('productId', productId);
+          formData.append('oldImagePath', this.productForm.get('img')?.value || '');
           this.productService.uploadImage(formData).subscribe({
             next: (uploadRes) => {
               this.productService.updateProduct(productId, { img: uploadRes.imagePath } as Product).subscribe({

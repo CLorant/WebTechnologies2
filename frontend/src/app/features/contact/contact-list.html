@@ -1,0 +1,33 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Kapcsolati űrlap üzenetek</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="table-responsive">
+      <table mat-table [dataSource]="contacts" class="mat-elevation-z2">
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef> Név </th>
+          <td mat-cell *matCellDef="let c"> {{c.name}} </td>
+        </ng-container>
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef> Email </th>
+          <td mat-cell *matCellDef="let c"> {{c.email}} </td>
+        </ng-container>
+        <ng-container matColumnDef="phone">
+          <th mat-header-cell *matHeaderCellDef> Telefon </th>
+          <td mat-cell *matCellDef="let c"> {{c.phone}} </td>
+        </ng-container>
+        <ng-container matColumnDef="message">
+          <th mat-header-cell *matHeaderCellDef> Üzenet </th>
+          <td mat-cell *matCellDef="let c"> {{c.message}} </td>
+        </ng-container>
+        <ng-container matColumnDef="createdAt">
+          <th mat-header-cell *matHeaderCellDef> Dátum </th>
+          <td mat-cell *matCellDef="let c"> {{c.createdAt | date:'yyyy.MM.dd HH:mm'}} </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+  </mat-card-content>
+</mat-card>

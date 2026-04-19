@@ -18,6 +18,7 @@ import { ConfirmationDialog } from '../../../shared/confirmation-dialog/confirma
 })
 export class CategoryList implements OnInit {
   categories: Category[] = [];
+  imageVersion = Date.now();
   displayedColumns: string[] = ['icon', 'name', 'actions'];
 
   constructor(
@@ -35,6 +36,7 @@ export class CategoryList implements OnInit {
     this.categoryService.getCategories().subscribe({
       next: (res) => {
         this.categories = res.data;
+        this.imageVersion = Date.now(); 
         this.cdr.detectChanges();
       },
       error: () => this.notify.showError('Hiba a kategóriák betöltésekor')

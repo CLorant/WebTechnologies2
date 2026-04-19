@@ -34,6 +34,7 @@ const seedDatabase = async () => {
     for (const [key, value] of Object.entries(menuData)) {
       const category = new Category({
         name: value.name,
+        slug: key,
         icon: value.icon
       });
       await category.save();

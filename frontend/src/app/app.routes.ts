@@ -64,5 +64,20 @@ export const routes: Routes = [
     loadComponent: () => import('./features/categories/category-form/category-form').then(m => m.CategoryForm),
     canActivate: [AuthGuard]
   },
+  { 
+    path: 'weekly-menu',
+    loadComponent: () => import('./features/weekly-menu/weekly-menu').then(m => m.WeeklyMenu),
+    canActivate: [AuthGuard]
+  },
+  { 
+    path: 'contacts',
+    loadComponent: () => import('./features/contact/contact-list').then(m => m.ContactList),
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'reservations',
+    loadComponent: () => import('./features/reservation/reservation-list').then(m => m.ReservationList),
+    canActivate: [AuthGuard]
+  },
   { path: '**', redirectTo: '/dashboard' }
 ];

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <div class="container">
+        <nav id="desktop-nav">
+            <a href="/index.html">
+                <img src="./assets/img/logo.png" alt="Fejléc logó" class="logo">
+            </a>
+            <div class="d-menu-container">
+                <a href="/etlap.html" class="d-menu-point">
+                    Étlap
+                </a>
+                <a href="/etterem.html" class="d-menu-point">
+                    Étterem
+                </a>
+                <a href="/kert.html" class="d-menu-point">
+                    Kert
+                </a>
+                <a href="/heti-menu.html" class="d-menu-point">
+                    Heti Menü
+                </a>
+                <a href="/foglalas.html" class="btn-default primary-btn btn-third-color ">
+                    Foglalás
+                </a>
+            </div>
+        </nav>
+    </div>
+    <nav id="mobile-nav">
+        <a href="/index.html">
+            <img src="./assets/img/logo.png" alt="Fejléc logó" class="logo">
+        </a>
+
+        <button id="menu-toggle" aria-label="Menü" type="button" onclick="toggleSideNav()">
+        </button>
+    </nav>
+    <aside id="side-nav" class="grid">
+        <div class="row">
+            <div class="col-3">
+                <div class="dark" onclick="toggleSideNav()"></div>
+            </div>
+            <div class="col-9">
+                <div class="light">
+                    <a href="/etlap.html" class="m-nav-link">
+                        Étlap
+                    </a>
+                    <a href="/etterem.html" class="m-nav-link">
+                        Étterem
+                    </a>
+                    <a href="/kert.html" class="m-nav-link">
+                        Kert
+                    </a>
+                    <a href="/heti-menu.html" class="m-nav-link border-none">
+                        Heti Menü
+                    </a>
+                    <div class="text-right mt-2">
+                        <a href="/foglalas.html" class="btn-default primary-btn btn-main-color">
+                            Foglalás
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <div id="dark-mobile-bg"></div>
+</body>
+
+</html>

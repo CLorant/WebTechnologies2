@@ -34,6 +34,7 @@ export class ProductList implements OnInit {
   filterText = '';
   selectedCategory = '';
   categories: Category[] = [];
+  imageVersion = Date.now();
 
   constructor(
     private productService: ProductService,
@@ -66,6 +67,7 @@ export class ProductList implements OnInit {
     this.productService.getProducts(categoryId, this.filterText || undefined).subscribe({
       next: (res) => {
         this.products = res.data;
+        this.imageVersion = Date.now();
         this.cdr.detectChanges();
       },
       error: (err) => {

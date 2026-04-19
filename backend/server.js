@@ -2,10 +2,6 @@ const express = require('express');
 const dotenv = require('dotenv');
 const cors = require('cors');
 const connectDB = require('./config/db');
-const authRoutes = require('./routes/authRoutes');
-const userRoutes = require('./routes/userRoutes');
-const categoryRoutes = require('./routes/categoryRoutes');
-const productRoutes = require('./routes/productRoutes');
 const errorHandler = require('./middleware/errorHandler');
 
 dotenv.config();
@@ -16,10 +12,14 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/uploads', express.static('uploads'));
-app.use('/api/auth', authRoutes);
-app.use('/api/users', userRoutes);
-app.use('/api/categories', categoryRoutes);
-app.use('/api/products', productRoutes);
+app.use('/api/auth', require('./routes/authRoutes'));
+app.use('/api/users', require('./routes/userRoutes'));
+app.use('/api/categories', require('./routes/categoryRoutes'));
+app.use('/api/products', require('./routes/productRoutes'));
+app.use('/api/menu', require('./routes/menuRoutes'));
+app.use('/api/weekly-menu', require('./routes/weeklyMenuRoutes'));
+app.use('/api/contact', require('./routes/contactRoutes'));
+app.use('/api/reservation', require('./routes/reservationRoutes'));
 
 app.use(errorHandler);
 

@@ -3,7 +3,9 @@
   <button mat-raised-button color="primary" routerLink="/user/create">Új felhasználó</button>
 </div>
 
-<app-search-filter (search)="onSearch($event)"></app-search-filter>
+<div class="filters">
+  <app-search-filter class="search-bar" (search)="onSearch($event)"></app-search-filter>
+</div>
 
 <table mat-table [dataSource]="users | filter:filterText:['name','email']" class="mat-elevation-z2">
   <ng-container matColumnDef="name">

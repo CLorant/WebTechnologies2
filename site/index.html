@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Western Bite Étterem - Főoldal</title>
+
+    <meta name="description"
+        content="A Western Bite Étterem egy autentikus, amerikai tematikájú étterem, ahol a vadnyugat hangulata találkozik a modern gasztronómiával.">
+    <meta name="theme-color" content="#002f6c">
+
+    <meta property="og:title" content="Western Bite Étterem - Főoldal">
+    <meta property="og:description"
+        content="A Western Bite Étterem egy autentikus, amerikai tematikájú étterem, ahol a vadnyugat hangulata találkozik a modern gasztronómiával.">
+    <meta property="og:locale" content="hu_HU">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/assets/og-img.webp">
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="./plugins/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/layout.css">
+    <link rel="stylesheet" href="./css/sections.css">
+    <link rel="stylesheet" href="./css/video.css">
+    <link rel="stylesheet" href="./css/inputs.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+</head>
+
+<body>
+    <header id="header"></header>
+
+    <section id="hero">
+        <div class="hero-container">
+            <div class="hero-img-container">
+                <div class="hero-img-box">
+                    <img src="./assets/img/main/hero-bg.webp" alt="Kezdő blokk háttérkép" class="hero-img">
+                </div>
+            </div>
+            <div class="container hero-text-container">
+                <div class="row hero-text-box">
+                    <div class="col-12">
+                        <div>
+                            <h1 class="mb-lg-4 mb-3">Western Bite Étterem</h1>
+                            <p>
+                                Lépjen be a vadnyugat ízvilágába! A Western Bite Étteremben az amerikai konyha legjobb
+                                fogásai várják: szaftos hamburgerek, füstös BBQ húsok és friss saláták - mindez western
+                                hangulatban, egy korty igazi szabadsággal fűszerezve.
+                            </p>
+                            <div class="buttons-2 mt-lg-4 mt-2">
+                                <a href="/foglalas.html" class="btn-default primary-btn btn-main-color">
+                                    Foglalás
+                                </a>
+                                <a href="/etlap.html" class="btn-default secondary-btn btn-main-color">
+                                    Étlap
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="video">
+        <div class="section-title-box">
+            <h2>Tekintsen be éttermünkbe!</h2>
+        </div>
+        <div class="container video-container">
+            <img src="/assets/img/design-stars-left.webp" id="design-star-left" class="d-none d-xl-block" alt="Dizájn csillagok bal">
+            
+            <div class="video-wrapper">
+                <video src="./assets/western-bite.mp4" id="introduction-video" preload="metadata"></video>
+
+                <input id="timeline" class="video-timeline" type="range" min="0" max="100" value="0" aria-label="Video timeline">
+                <div class="video-controls" role="group" aria-label="Video controls">
+                    <div class="controls-left">
+                        <button id="control" class="video-btn" aria-label="Play">
+                            <span class="material-symbols-outlined icon-play">
+                                play_arrow
+                            </span>
+                            <span class="material-symbols-outlined icon-pause">
+                                pause
+                            </span>
+                            <span class="material-symbols-outlined icon-replay">
+                                replay
+                            </span>
+                        </button>
+
+                        <div class="time" id="time">00:00 / 00:00</div>
+
+                        <div class="slider-container" title="Volume">
+                            <button id="mute" class="video-btn" aria-pressed="false" aria-label="Mute">
+                                <span class="material-symbols-outlined icon-volume">
+                                    volume_up
+                                </span>
+                                <span class="material-symbols-outlined icon-mute hide">
+                                    volume_off
+                                </span>
+                            </button>
+                            <input id="volume" class="video-range" type="range" min="0" max="100" value="100"
+                                aria-label="Volume slider">
+                        </div>
+                    </div>
+
+                    <div class="controls-right">
+                        <div class="slider-container playback-container">
+                            <span class="material-symbols-outlined icon-playback">
+                                autoplay
+                            </span>
+                            <input id="playback" class="video-range" type="range" min="0.25" max="2" step="0.25"
+                                value="1" aria-label="Playback speed">
+                            <span id="playback-value">1x</span>
+                        </div>
+                        <div>
+                            <button id="fullscreen" class="video-btn" title="Fullscreen">
+                                <span class="material-symbols-outlined icon-fullscreen-enter">
+                                    fullscreen
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img src="/assets/img/design-stars-right.webp" id="design-star-right" class="d-none d-xl-block" alt="Dizájn csillagok job">
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <div class="row mb-lg-5 mb-3">
+                <div class="col-lg-7 order-lg-first order-last">
+                    <div class="box-lr-text">
+                        <h3 class="mb-lg-3 mb-2">
+                            Foglaljon asztalt még ma!
+                        </h3>
+                        <p>
+                            Garantálja helyét a vadnyugat legízletesebb vacsorájára! Családi étkezéshez, baráti
+                            összejövetelhez vagy randevúhoz - nálunk minden alkalom különleges élmény.
+                        </p>
+                        <div>
+                            <a href="/foglalas.html" class="btn-default primary-btn btn-main-color">
+                                Foglalás
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="service-img-container">
+                        <img src="./assets/img/main/boxlr-1.webp" alt="Foglalás kép" loading="lazy">
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-lg-5 mb-3">
+                <div class="col-lg-7 order-last">
+                    <div class="box-lr-text">
+                        <h3 class="mb-lg-3 mb-2">
+                            Fedezze fel western hangulatú éttermünket
+                        </h3>
+                        <p>
+                            Autentikus dekoráció, western dallamok és barátságos személyzet - ez teszi különlegessé a
+                            Western Bite-ot. Lépjen be, és érezze, mintha a vadnyugat közepén vacsorázna!
+                        </p>
+                        <div>
+                            <a href="/etterem.html" class="btn-default primary-btn btn-main-color">
+                                Bővebben
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="service-img-container">
+                        <img src="./assets/img/main/boxlr-2.webp" alt="Étterem kép" loading="lazy">
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-lg-5 mb-3">
+                <div class="col-lg-7 order-lg-first order-last">
+                    <div class="box-lr-text">
+                        <h3 class="mb-lg-3 mb-2">
+                            Pihenjen meg hangulatos kerthelyiségünkben
+                        </h3>
+                        <p>
+                            Nyári esték, grillillat, és hűs italok a szabad ég alatt - a Western Bite kerthelyisége a
+                            kikapcsolódás tökéletes helyszíne.
+                        </p>
+                        <div>
+                            <a href="/kert.html" class="btn-default primary-btn btn-main-color">
+                                Bővebben
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="service-img-container">
+                        <img src="./assets/img/main/boxlr-3.webp" alt="Kerthelyiség kép" loading="lazy">
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-lg-5 mb-3">
+                <div class="col-lg-7 order-last">
+                    <div class="box-lr-text">
+                        <h3 class="mb-lg-3 mb-2">
+                            Kóstolja meg Amerika ízeit
+                        </h3>
+                        <p>
+                            Hamburgerek, BBQ ételek, steakek, saláták és klasszikus amerikai desszertek - minden falat
+                            egy új kaland.
+                        </p>
+                        <div>
+                            <a href="/etlap.html" class="btn-default primary-btn btn-main-color">
+                                Tovább
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="service-img-container">
+                        <img src="./assets/img/main/boxlr-4.webp" alt="Étlap kép" loading="lazy">
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-lg-5 mb-3">
+                <div class="col-lg-7 order-lg-first order-last">
+                    <div class="box-lr-text">
+                        <h3 class="mb-lg-3 mb-2">
+                            Heti menü
+                        </h3>
+                        <p>
+                            Minden hétköznap változatos, amerikai ihletésű menüvel várjuk - gyors, ízletes, házias, és
+                            mindig bőséges adagokkal.
+                        </p>
+                        <div>
+                            <a href="/heti-menu.html" class="btn-default primary-btn btn-main-color">
+                                Tovább
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="service-img-container">
+                        <img src="./assets/img/main/boxlr-5.webp" alt="Heti menü kép" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <div class="section-title-box">
+                <h2>Kapcsolat</h2>
+                <p>Kérdése van? Lépjen velünk kapcsolatba, örömmel segítünk!</p>
+            </div>
+            <form  method="post">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <img src="./assets/img/contact.webp" class="contact-img mb-lg-0 mb-3" loading="lazy">
+                    </div>
+                    <div class="col-lg-6 order-lg-first">
+                        <div class="row mt-lg-4 mt-auto">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <input id="name" type="text" class="form-control default-input" name="name"
+                                        placeholder="Név" aria-label="Név" required="">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <input id="phone" type="text" class="form-control default-input" name="phone"
+                                        placeholder="Telefonszám" aria-label="Telefonszám" required="">
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <input id="email" type="email" class="form-control default-input" name="email"
+                                        placeholder="Email cím" aria-label="Email cím" required="">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <textarea class="form-control default-input" aria-label="Üzenet" name="message"
+                                        placeholder="Üzenet" rows="3"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="custom-control custom-checkbox d-flex align-items-center mb-3 fs-15 pl-2">
+                                    <input type="checkbox" class="custom-control-input position-relative" id="agree"
+                                        name="agree" required>
+                                    <label class="custom-control-label" for="agree">
+                                        <span class="d-inline-block">
+                                            &nbsp;
+                                            Elfogadom az
+                                            <a href="/assets/privacy-policy.pdf" class="contact-link" target="_blank">
+                                                Adatvédelmi irányelvek</a>-et
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <button type="submit" class="btn-default primary-btn btn-main-color">
+                                    Küldés
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer id="footer"></footer>
+
+    <script src="./plugins/jquery-3.5.1.js"></script>
+    <script src="./plugins/bootstrap.bundle.min.js"></script>
+    <script src="./js/layout.js"></script>
+    <script src="./js/video.js"></script>
+    <script src="./js/contact.js"></script>
+</body>
+
+</html>

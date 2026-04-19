@@ -1,4 +1,4 @@
-const { upload, processImage } = require('../middleware/upload');
+const { upload, processImage, deleteImage } = require('../middleware/upload');
 const Product = require('../models/Product');
 
 // Get all products (with optional search and category filter)
@@ -68,7 +68,10 @@ exports.deleteProduct = async (req, res) => {
   try {
     const product = await Product.findById(req.params.id);
     if (!product) return res.status(404).json({ success: false, message: 'Product not found' });
-    await product.remove();
+
+    if (product.img) deleteImage(product.img);
+    await product.deleteOne();
+
     res.json({ success: true, message: 'Product deleted' });
   } catch (err) {
     res.status(500).json({ success: false, message: err.message });
@@ -81,13 +84,20 @@ exports.uploadImage = async (req, res) => {
     if (!req.file) {
       return res.status(400).json({ success: false, message: 'No file uploaded' });
     }
-    const { productName, productId } = req.body;
+
+    const { productName, productId, oldImagePath } = req.body;
+
     if (!productName || !productId) {
       return res.status(400).json({ success: false, message: 'Missing productName or productId' });
     }
-    const imagePath = await processImage(req.file, 'products', productName, productId);
+
+    if (oldImagePath) deleteImage(oldImagePath);
+
+    const imagePath = await processImage(req.file, productId, productName, 'products');
+
     res.json({ success: true, imagePath });
-  } catch (err) {
+  }
+  catch (err) {
     res.status(500).json({ success: false, message: err.message });
   }
 };

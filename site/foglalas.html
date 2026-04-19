@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Foglalás - Western Bite Étterem</title>
+
+    <meta name="description"
+        content="Foglalja le asztalát online, gyorsan és kényelmesen! Adja meg adatait, és mi visszaigazoljuk foglalását.">
+    <meta name="theme-color" content="#002f6c">
+
+    <meta property="og:title" content="Foglalás - Western Bite Étterem">
+    <meta property="og:description"
+        content="Foglalja le asztalát online, gyorsan és kényelmesen! Adja meg adatait, és mi visszaigazoljuk foglalását.">
+    <meta property="og:locale" content="hu_HU">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/assets/og-img.webp">
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="./plugins/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/layout.css">
+    <link rel="stylesheet" href="./css/sections.css">
+    <link rel="stylesheet" href="./css/inputs.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+</head>
+
+<body>
+    <header id="header"></header>
+
+    <section id="hero-min">
+    </section>
+    <div class="container">
+        <div class="ext-head-text">
+            <h1>Foglalás</h1>
+        </div>
+        <div class="mt-lg-4 mt-3 text-center px-lg-3">
+            Foglalja le asztalát online, gyorsan és kényelmesen! Adja meg adatait, és mi visszaigazoljuk foglalását.
+        </div>
+    </div>
+
+    <section id="reservation">
+        <div class="container">
+            <form method="post">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <input id="name" type="text" class="form-control default-input" name="name"
+                                placeholder="Név" aria-label="Név" required="">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <input id="phone" type="text" class="form-control default-input" name="phone"
+                                placeholder="Telefonszám" aria-label="Telefonszám" required="">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <input id="email" type="email" class="form-control default-input" name="email"
+                                placeholder="Email cím" aria-label="Email cím" required="">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <input id="date" type="date" class="form-control default-input" name="date"
+                                aria-label="Dátum" required="">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <input list="times" id="time" name="time" class="form-control default-input"
+                                placeholder="Időpont" aria-label="Időpont" required="">
+                            <datalist id="times">
+                                <option value="12:00">
+                                <option value="13:00">
+                                <option value="14:00">
+                                <option value="18:00">
+                                <option value="19:00">
+                                <option value="20:00">
+                            </datalist>
+                            <label for="time" id="timeLabel" class="form-label fs-15 d-none" style="color: red;">Nem megfelelő időpont</label>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label for="guests" class="form-label fs-15">Vendégek száma</label>
+                            <input id="guests" type="number" class="form-control default-input" name="guests"
+                                placeholder="Pl. 4" aria-label="Vendégek száma" min="1" max="20" required="">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label class="form-label fs-15 d-block mb-2">Asztal típusa</label>
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="location" id="indoor"
+                                        value="beltér" required>
+                                    <label class="form-check-label" for="indoor">Beltér</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="location" id="garden"
+                                        value="kerthelyiség" required>
+                                    <label class="form-check-label" for="garden">Kerthelyiség</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label class="form-label fs-15 d-block mb-2">Különleges igények</label>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="childseat" name="options[]"
+                                    value="Gyerek szék">
+                                <label class="custom-control-label" for="childseat">Gyerek szék</label>
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="birthday" name="options[]"
+                                    value="Szülinapi alkalom">
+                                <label class="custom-control-label" for="birthday">Szülinapi alkalom</label>
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="vegetarian" name="options[]"
+                                    value="Vegetáriánus menü kérése">
+                                <label class="custom-control-label" for="vegetarian">Vegetáriánus menü kérése</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div id="color-wrapper" class="form-group d-none">
+                            <label class="form-label fs-15 d-block mb-2">Dekoráció színe (opcionális)</label>
+                            <div class="custom-control">
+                                <input type="color" class="custom-control-input" value="#002f6c">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="form-group">
+                            <textarea class="form-control default-input" aria-label="Megjegyzés" name="message"
+                                placeholder="Megjegyzés" rows="3"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="custom-control custom-checkbox mb-3">
+                            <input type="checkbox" class="custom-control-input position-relative" id="agree"
+                                name="agree" required>
+                            <label class="custom-control-label" for="agree">
+                                Elfogadom az
+                                    <a href="/assets/privacy-policy.pdf" class="" target="_blank">
+                                        Adatvédelmi irányelveket</a>.
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <button type="submit" class="btn-default primary-btn btn-main-color">
+                            Küldés
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer id="footer"></footer>
+
+    <script src="./plugins/jquery-3.5.1.js"></script>
+    <script src="./plugins/bootstrap.bundle.min.js"></script>
+    <script src="./js/layout.js"></script>
+    <script src="./js/reservation.js"></script>
+</body>
+
+</html>

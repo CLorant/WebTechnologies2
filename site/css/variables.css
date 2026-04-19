@@ -1,0 +1,27 @@
+:root {
+	--color-main: #002f6c;
+	--color-secondary: #045d92;
+	--color-third: #BE2E25;
+	--color-white: #fff;
+	--color-black: #000;
+    --color-darker: #1e2020;
+	--color-dark: #343D3E;
+	--color-gray: #E2E2E2;
+    --color-light-gray: #f4faff;
+    --color-transparent-dark: #00000025;
+    --color-transparent-black: #00000083;
+
+    --font-family-name: 'Montserrat';
+    --font-size-default: 16px;
+    --weight-regular: 400;
+    --weight-medium: 500;
+    --weight-bold: 700;
+
+    --line-height-default: 1.5;
+	--line-thickness: 4px;
+
+    --padding-default: 12px 10px;
+    --padding-btn-default: 14px 28px;
+
+    --border-radius-default: 8px;
+}

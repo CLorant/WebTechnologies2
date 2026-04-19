@@ -1,0 +1,155 @@
+@import url('variables.css');
+
+.video-btn {
+    width: 2.5rem;
+    height: 2.5rem;
+    line-height: 4;
+    overflow: hidden;
+    border: none;
+    cursor: pointer;
+    padding-left: 0;
+}
+
+.video-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.video-wrapper {
+    border-radius: var(--border-radius-default);
+    background: var(--color-black);
+}
+
+.video-timeline {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    height: 6px;
+    appearance: none;
+    background: var(--color-gray);
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+}
+
+.video-timeline::-webkit-slider-thumb {
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--color-main);
+}
+
+video {
+    display: block;
+    width: 980px;
+    max-width: 100%;
+    border-radius: 6px;
+    background: var(--color-secondary);
+    margin: 0 auto;
+}
+
+.video-controls {
+    padding: 12px 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    flex-direction: row;
+    align-items: stretch;
+    background: var(--color-darker);
+    color: var(--color-white);
+    font-size: 14px;
+}
+
+.controls-left,
+.controls-right {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.video-btn {
+    background: var(--color-darker);
+    color: var(--color-white);
+    border: 0;
+    padding: 8px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+}
+
+.time {
+    min-width: 110px;
+    text-align: left;
+    color: var(--color-white);
+}
+
+.slider-container {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.playback-container {
+    display: none;
+}
+
+input[type="range"].video-range {
+    width: 120px;
+    height: 6px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.playback-btn {
+    padding: 6px 8px;
+    border-radius: 6px;
+    border: 0;
+    cursor: pointer;
+    min-width: 44px;
+}
+
+#playback-value {
+    display: inline-block;
+    width: 40px;
+    text-align: center;
+}
+
+#design-star-left,
+#design-star-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    height: auto;
+    pointer-events: none;
+    z-index: 1;
+    height: 500px;
+}
+
+#design-star-left {
+    left: -600px;
+}
+
+#design-star-right {
+    right: -600px;
+}
+
+@media (min-width:768px) {
+    input[type="range"] {
+        width: 100%;
+    }
+
+    .playback-container {
+        display: flex;
+    }
+}

@@ -16,6 +16,9 @@ export class Sidebar {
     { path: '/dashboard', label: 'Irányítópult', icon: 'dashboard' },
     { path: '/user-list', label: 'Felhasználók', icon: 'people' },
     { path: '/category-list', label: 'Kategóriák', icon: 'category' },
-    { path: '/product-list', label: 'Termékek', icon: 'restaurant_menu' }
+    { path: '/product-list', label: 'Termékek', icon: 'restaurant_menu' },
+    { path: '/weekly-menu', label: 'Heti menü', icon: 'calendar_today' },
+    { path: '/contacts', label: 'Kapcsolat', icon: 'mail' },
+    { path: '/reservations', label: 'Foglalások', icon: 'book_online' }
   ];
 }
