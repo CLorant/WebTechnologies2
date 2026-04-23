@@ -9,7 +9,7 @@ function createCategoryButtonHTML(category, index, categoryId, tabId) {
                 role="tab" 
                 aria-controls="${tabId}" 
                 aria-selected="${index === 0}">
-            <img src="${category.icon}" alt="${category.name} kategória ikonja" width="50">
+            <img src="${window.BACKEND_URL}${category.icon}" alt="${category.name} kategória ikonja" width="50">
             <span class="text-nowrap text-uppercase text-left">${category.name}</span>
         </button>
     </div>`;
@@ -32,7 +32,7 @@ function createProductHTML(item) {
     <div class="col-lg-4 col-md-6 col-12">
         <article class="product-container">
             <div class="product-img-container">
-                <img src="${item.img}" class="w-100 product-img" alt="${item.name} termék képe">
+                <img src="${window.BACKEND_URL}${item.img}" class="w-100 product-img" alt="${item.name} termék képe">
             </div>
             <div class="product-desc-bg">
                 <div class="product-name-container">
@@ -60,7 +60,7 @@ function populateMenu() {
     productsContainer.innerHTML = "";
 
     $.ajax({
-        url: "http://localhost:5000/api/menu",
+        url: `${window.BACKEND_URL}/api/menu`,
         method: "GET",
         dataType: "json",
 

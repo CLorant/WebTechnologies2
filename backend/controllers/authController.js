@@ -14,7 +14,7 @@ exports.register = async (req, res) => {
     const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, { expiresIn: '7d' });
     res.json({ success: true, token, user: { id: user._id, name, email, phone } });
   } catch (err) {
-    console.log('Registration error:', err);   // Add this line
+    console.log('Registration error:', err);
     res.status(500).json({ success: false, message: err.message });
   }
 };

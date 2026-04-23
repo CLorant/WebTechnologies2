@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatTableModule } from '@angular/material/table';
 import { MatCardModule } from '@angular/material/card';
@@ -11,8 +11,7 @@ import { Contact } from '../../shared/models/contact.model';
   selector: 'app-contact-list',
   standalone: true,
   imports: [CommonModule, MatTableModule, MatCardModule, MatIconModule],
-  templateUrl: './contact-list.html',
-  // styleUrls: ['./contact-list.css']
+  templateUrl: './contact-list.html'
 })
 export class ContactList implements OnInit {
   contacts: Contact[] = [];
@@ -20,7 +19,8 @@ export class ContactList implements OnInit {
 
   constructor(
     private contactService: ContactService,
-    private notify: NotificationService
+    private notify: NotificationService,
+    private cdr: ChangeDetectorRef
   ) {}
 
   ngOnInit(): void {
@@ -30,9 +30,14 @@ export class ContactList implements OnInit {
   loadContacts() {
     this.contactService.getContacts().subscribe({
       next: (res) => {
-        if (res.success) this.contacts = res.data;
+        if (res.success) {
+          this.contacts = res.data;
+          this.cdr.detectChanges();
+        } else {
+          this.notify.showError('Hiba a kapcsolatfelvételek betöltésekor');
+        }
       },
-      error: () => this.notify.showError('Hiba az üzenetek betöltésekor')
+      error: () => this.notify.showError('Hálózati hiba')
     });
   }
 }

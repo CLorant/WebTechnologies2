@@ -7,12 +7,15 @@ exports.getMenu = async (req, res) => {
     const menu = {};
 
     for (const cat of categories) {
-      const items = await Product.find({ category: cat.slug }).select('name description img price');
-      if (items.length > 0) {
+      const products = await Product.find({ category: cat._id })
+        .select('name description img price')
+        .lean();
+
+      if (products.length > 0) {
         menu[cat.slug] = {
           name: cat.name,
           icon: cat.icon,
-          items: items.map(p => ({
+          items: products.map(p => ({
             name: p.name,
             description: p.description,
             img: p.img,

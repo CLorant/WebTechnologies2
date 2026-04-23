@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
             dataObj["party_color"] = colorValue;
         }
 
-        fetch("http://localhost:5000/api/reservation", {
+        fetch(`${window.BACKEND_URL}/api/reservation`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(dataObj)

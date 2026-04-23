@@ -1,6 +1,6 @@
 function populateWeeklyMenu() {
     $.ajax({
-        url: "http://localhost:5000/api/weekly-menu",
+        url: `${window.BACKEND_URL}/api/weekly-menu`,
         method: "GET",
         dataType: "json",
 

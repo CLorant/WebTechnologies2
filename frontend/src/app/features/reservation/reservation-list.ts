@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef  } from '@angular/core';
 import { CommonModule, DatePipe } from '@angular/common';
 import { MatTableModule } from '@angular/material/table';
 import { MatCardModule } from '@angular/material/card';
@@ -11,7 +11,8 @@ import { Reservation } from '../../shared/models/reservation.model';
   selector: 'app-reservation-list',
   standalone: true,
   imports: [CommonModule, MatTableModule, MatCardModule, MatChipsModule],
-  templateUrl: './reservation-list.html'
+  templateUrl: './reservation-list.html',
+  styleUrls: ['./reservation-list.css']
 })
 export class ReservationList implements OnInit {
   reservations: Reservation[] = [];
@@ -19,7 +20,8 @@ export class ReservationList implements OnInit {
 
   constructor(
     private reservationService: ReservationService,
-    private notify: NotificationService
+    private notify: NotificationService,
+    private cdr: ChangeDetectorRef
   ) {}
 
   ngOnInit(): void {
@@ -29,9 +31,14 @@ export class ReservationList implements OnInit {
   loadReservations() {
     this.reservationService.getReservations().subscribe({
       next: (res) => {
-        if (res.success) this.reservations = res.data;
+        if (res.success) {
+          this.reservations = res.data;
+          this.cdr.detectChanges();
+        } else {
+          this.notify.showError('Hiba a foglalások betöltésekor');
+        }
       },
-      error: () => this.notify.showError('Hiba a foglalások betöltésekor')
+      error: () => this.notify.showError('Hálózati hiba')
     });
   }
 }

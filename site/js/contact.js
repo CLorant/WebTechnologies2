@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
             dataObj[key] = value;
         });
 
-        fetch("http://localhost:5000/api/contact", {
+        fetch(`${window.BACKEND_URL}/api/contact`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(dataObj)

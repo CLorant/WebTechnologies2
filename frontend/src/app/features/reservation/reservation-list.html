@@ -1,7 +1,8 @@
+<div class="list-header">
+  <h2>Asztalfoglalások</h2>
+</div>
+
 <mat-card>
-  <mat-card-header>
-    <mat-card-title>Asztalfoglalások</mat-card-title>
-  </mat-card-header>
   <mat-card-content>
     <div class="table-responsive">
       <table mat-table [dataSource]="reservations" class="mat-elevation-z2">
@@ -30,7 +31,13 @@
           <td mat-cell *matCellDef="let r">
             <mat-chip-listbox>
               <mat-chip *ngFor="let opt of r.options">{{opt}}</mat-chip>
-              <mat-chip *ngIf="r.party_color" [style.background]="r.party_color">Szülinap</mat-chip>
+              <mat-chip *ngIf="r.party_color">
+                <div class="deco-color-box">
+                  <span>Dekor színe:</span>
+                  <span>{{r.party_color}}</span>
+                  <div [style.background]="r.party_color"></div>
+                </div>
+              </mat-chip>
             </mat-chip-listbox>
           </td>
         </ng-container>

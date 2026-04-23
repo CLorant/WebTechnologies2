@@ -80,3 +80,9 @@ mat-sidenav {
 .search-bar {
   width: 350px;
 }
+
+.table-responsive {
+  overflow-x: auto;
+  display: block;
+  width: 100%;
+}

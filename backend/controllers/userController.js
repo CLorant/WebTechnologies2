@@ -21,6 +21,24 @@ exports.getUser = async (req, res) => {
   }
 };
 
+// Create user
+exports.createUser = async (req, res) => {
+  try {
+    const { name, email, phone, password } = req.body;
+    const existing = await User.findOne({ email });
+    if (existing) {
+      return res.status(400).json({ success: false, message: 'User already exists' });
+    }
+    const user = new User({ name, email, phone, password });
+    await user.save();
+    const userWithoutPassword = user.toObject();
+    delete userWithoutPassword.password;
+    res.status(201).json({ success: true, data: userWithoutPassword });
+  } catch (err) {
+    res.status(500).json({ success: false, message: err.message });
+  }
+};
+
 // Update user
 exports.updateUser = async (req, res) => {
   try {

@@ -4,6 +4,6 @@ const auth = require('../middleware/auth');
 const router = express.Router();
 
 router.get('/', getWeeklyMenu);
-router.put('/', auth, updateWeeklyMenu); // only admin can update
+router.put('/', auth, updateWeeklyMenu);
 
 module.exports = router;

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormArray, FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
@@ -32,7 +32,8 @@ export class WeeklyMenu implements OnInit {
   constructor(
     private fb: FormBuilder,
     private weeklyMenuService: WeeklyMenuService,
-    private notify: NotificationService
+    private notify: NotificationService,
+    private cdr: ChangeDetectorRef
   ) {}
 
   ngOnInit(): void {
@@ -60,6 +61,7 @@ export class WeeklyMenu implements OnInit {
             })
           );
         });
+        this.cdr.detectChanges();
       },
       error: () => this.notify.showError('Hiba a heti menü betöltésekor')
     });

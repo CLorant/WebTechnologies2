@@ -5,10 +5,12 @@ const bcrypt = require('bcryptjs');
 const User = require('../models/User');
 const Category = require('../models/Category');
 const Product = require('../models/Product');
+const WeeklyMenu = require('../models/WeeklyMenu');
 
 dotenv.config({ path: path.join(__dirname, '../.env') });
 
 const menuData = require('./menu.json');
+const weeklyMenuData = require('./weekly-menu.json');
 
 const seedDatabase = async () => {
   try {
@@ -18,14 +20,14 @@ const seedDatabase = async () => {
     await User.deleteMany({});
     await Category.deleteMany({});
     await Product.deleteMany({});
+    await WeeklyMenu.deleteMany({});
     console.log('Cleared existing data');
 
-    const adminPassword = await bcrypt.hash('WB2002', 10);
     const admin = new User({
       name: 'Admin',
       email: 'admin@westernbite.com',
       phone: '+36 1 234 5678',
-      password: adminPassword
+      password: 'WB2002'
     });
     await admin.save();
     console.log('Admin user created');
@@ -57,6 +59,19 @@ const seedDatabase = async () => {
       }
     }
     console.log('Products seeded');
+
+    for (let i = 0; i < weeklyMenuData.length; i++) {
+      const day = weeklyMenuData[i];
+      const weeklyMenuItem = new WeeklyMenu({
+        dayIndex: i,
+        A: day.A,
+        B: day.B,
+        C: day.C,
+        dessert: day.dessert
+      });
+      await weeklyMenuItem.save();
+    }
+    console.log(`Weekly menu seeded (${weeklyMenuData.length} days)`);
 
     console.log('Seeding completed successfully');
     process.exit(0);

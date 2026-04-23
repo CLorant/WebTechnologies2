@@ -1,0 +1,12 @@
+.deco-color-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.deco-color-box div {
+    width: 16px;
+    height: 16px;
+}

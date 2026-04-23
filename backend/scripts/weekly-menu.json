@@ -1,0 +1,32 @@
+[
+    {
+        "A": "BBQ csirkemell sült burgonyával",
+        "B": "Cheeseburger házi buciban",
+        "C": "Vegetáriánus wrap ranch szósszal",
+        "dessert": "Almás pite vaníliafagyival"
+    },
+    {
+        "A": "Texasi marharagu kukoricakenyérrel",
+        "B": "Csirkés Caesar saláta",
+        "C": "Grillezett zöldséges tészta",
+        "dessert": "Csokis brownie dióval"
+    },
+    {
+        "A": "Pulled pork szendvics coleslaw-val",
+        "B": "Buffalo csirkeszárnyak mártogatóval",
+        "C": "Sült tofu édesburgonyával",
+        "dessert": "Sajttorta eperöntettel"
+    },
+    {
+        "A": "Steak sült hagymakarikákkal",
+        "B": "Baconös hamburger cheddar sajttal",
+        "C": "Grillezett kukoricás quinoa saláta",
+        "dessert": "Banános palacsinta juharsziruppal"
+    },
+    {
+        "A": "Hal taco lime-os szósszal",
+        "B": "Füstölt BBQ bordák coleslaw-val",
+        "C": "Vegetáriánus chili babbal",
+        "dessert": "Amerikai palacsinta áfonyával"
+    }
+]

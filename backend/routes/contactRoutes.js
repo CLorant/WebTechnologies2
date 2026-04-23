@@ -4,6 +4,6 @@ const auth = require('../middleware/auth');
 const router = express.Router();
 
 router.post('/', submitContact);
-router.get('/', auth, getContacts); // admin only
+router.get('/', auth, getContacts);
 
 module.exports = router;

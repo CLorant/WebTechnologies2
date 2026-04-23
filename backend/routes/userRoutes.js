@@ -1,11 +1,12 @@
 const express = require('express');
-const { getUsers, getUser, updateUser, deleteUser } = require('../controllers/userController');
+const { getUsers, getUser, createUser, updateUser, deleteUser } = require('../controllers/userController');
 const auth = require('../middleware/auth');
 const router = express.Router();
 
 router.use(auth);
 router.get('/', getUsers);
 router.get('/:id', getUser);
+router.post('/', createUser);
 router.put('/:id', updateUser);
 router.delete('/:id', deleteUser);
 
