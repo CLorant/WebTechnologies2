@@ -16,7 +16,7 @@
 
 <div class="product-grid">
   <mat-card *ngFor="let product of products" class="product-card">
-    <img mat-card-image [src]="product.img" alt="{{product.name}}">
+    <img mat-card-image class="product-img" [src]="product.img" alt="{{product.name}}">
     <mat-card-header>
       <mat-card-title>{{product.name}}</mat-card-title>
       <mat-card-subtitle>{{product.price + ' Ft'}}</mat-card-subtitle>
